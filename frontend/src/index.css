@@ -1,0 +1,104 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ffdcb1;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 20em;
+}
+
+.headerDiv {
+  background-color: aqua;
+}
+
+.firstHeader {
+  /* background-color: rgb(255, 130, 46); */
+  margin: none;
+  color: rgb(255, 110, 178);
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 15em;
+  height: 2em;
+  font-size: larger;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-style: none;
+  padding: 5px 5px 5px 15px;
+  color: rgb(255, 110, 178);
+}
+
+.addButton {
+  background-color: rgb(248, 93, 165);
+  width: 10em;
+  height: 3em;
+  font-size: larger;
+  color: white;
+}
+
+.secondHeader {
+  margin: 2em 0 15px 0;
+  color: rgb(255, 110, 178);
+}
+
+.petContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.petDiv {
+  width: 18em;
+  background-color: rgb(252, 140, 192);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px 0 20px 0;
+}
+
+.petName {
+  font-weight: bolder;
+  font-size: larger;
+  margin: 5px;
+}
+
+.petAge {
+  margin: 5px;
+}
+
+.petSpecies {
+  margin: 5px;
+}
+
+.trashButton {
+  border-radius: 10px;
+  background-color: rgb(248, 93, 165);
+  padding: 5px 5px 3px 5px;
+  margin-top: 10px;
+}
+
+button {
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
