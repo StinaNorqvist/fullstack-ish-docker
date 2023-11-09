@@ -20,6 +20,7 @@ client.connect();
 app.get("/api", async (_request, response) => {
   try {
     const { rows } = await client.query("SELECT * FROM pets");
+    console.log(rows, "Get request");
     response.send(rows);
   } catch (error) {
     response.status(500).send("Internal server error");
