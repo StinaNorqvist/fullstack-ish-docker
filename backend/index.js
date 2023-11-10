@@ -17,10 +17,10 @@ const client = new Client({
 client.connect();
 
 // GET ALL PETS
-app.get("/api", async (_request, response) => {
+app.get("/", async (_request, response) => {
   try {
     const { rows } = await client.query("SELECT * FROM pets");
-    console.log(rows, "Get request");
+    console.log(rows, "THIS IS A CONSOLE LOG");
     response.send(rows);
   } catch (error) {
     response.status(500).send("Internal server error");
@@ -29,7 +29,7 @@ app.get("/api", async (_request, response) => {
 });
 
 // POST NEW PET
-app.post("/api", async (request, response) => {
+app.post("/", async (request, response) => {
   try {
     const { name, age, species } = request.body;
     const { rows } = await client.query(
@@ -44,7 +44,7 @@ app.post("/api", async (request, response) => {
 });
 
 // DELETE PET
-app.delete("/api", async (request, response) => {
+app.delete("/", async (request, response) => {
   try {
     const { id } = request.body;
     const { rows } = await client.query("DELETE FROM pets WHERE id = $1", [id]);

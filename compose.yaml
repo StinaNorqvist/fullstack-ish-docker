@@ -1,20 +1,25 @@
 services:
   backend:
-  # DU LA TILL ./ PÅ BACKEND
     build: backend
     depends_on:
       database:
         condition: service_healthy
-    environment:
-      - PGURI=postgres://postgres:secret@database/
+    env_file:
+      - ./backend/.env
     ports:
       - "3000:3000"
+  frontend:
+    build: frontend
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
   database:
-    environment:
-      - POSTGRES_PASSWORD=secret
+    env_file:
+      - ./backend/.env
     healthcheck:
       interval: 1s
-      test: 'pg_isready --username=postgres'
+      test: "pg_isready --username=postgres"
     image: postgres
     volumes:
       - ./data:/var/lib/postgresql/data
